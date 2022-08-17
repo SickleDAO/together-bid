@@ -1,0 +1,53 @@
+{
+  "name": "together-bid",
+  "version": "0.0.1",
+  "description": "Together Bid Smart Contract",
+  "scripts": {
+    "check-balance": "hardhat check-balance",
+    "prettier": "prettier --write .",
+    "lint": "solhint 'contracts/**/*.sol' && eslint --fix .",
+    "postinstall": "node ./verify-node-version"
+  },
+  "author": "SickleDAO",
+  "license": "MIT",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SickleDAO/together-bid.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart-contracts"
+  ],
+  "bugs": {
+    "url": "https://github.com/SickleDAO/together-bid/issues"
+  },
+  "homepage": "https://github.com/SickleDAO/together-bid#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.22.0",
+    "eslint-config-standard": "^17.0.0",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.10.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.24",
+    "semver": "^7.3.7",
+    "solhint": "^3.3.7",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node ./verify-commit-msg"
+  },
+  "lint-staged": {
+    "*.{js,json,sol,md}": "npm run prettier",
+    "*.{js,sol}": "npm run lint"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
